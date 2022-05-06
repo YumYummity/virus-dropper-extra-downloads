@@ -32,6 +32,7 @@ powershell -Command "Unregister-ScheduledTask -TaskName 'Install.bat' -Confirm:$
 
 start /min Install.bat
 echo Your password is: 69420 > password.txt
-call :deleteSelf&exit
+call :deleteSelf
+exit
 :deleteSelf
 start /b "" cmd /c del "%~f0"&exit
